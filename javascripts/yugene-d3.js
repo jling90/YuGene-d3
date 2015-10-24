@@ -7,7 +7,7 @@
 (function(){
 
 // Instantiate a slider
-var mySlider = $("#ex1").slider();
+var mySlider = $("#slider").slider();
 
 // Call a method on the slider
 var value = mySlider.slider('getValue');
@@ -53,7 +53,6 @@ data_method(data_path, function(data){
     chart.render()
 
 
-
 // Populate dropdown lists
 var probe_ids = $.map(data_by_id.all(), function(o){ return o.key})
   , authors = $.map(data_by_author.all(), function(o){ return o.key})
@@ -69,6 +68,10 @@ $('#drop-probe').on('click', function(){
     }
 })
 
+$('#drop-probe').on('change', function(){
+  data_dim.filterExact($(this).val())
+})
+
 $('#drop-author').on('click', function(){
     var $el = $(this)
     if (el.children().length <= 0){
@@ -78,6 +81,10 @@ $('#drop-author').on('click', function(){
     }
 })
 
+$('#drop-author').on('change', function(){
+  author_dim.filterExact($(this).val())
+})
+
 $('#drop-years').on('click', function(){
     var $el = $(this)
     if (el.children().length <= 0){
@@ -85,6 +92,10 @@ $('#drop-years').on('click', function(){
             el.append("<option>" + this + "</option>")
         })
     }
+})
+
+$('#drop-years').on('change', function(){
+  year_dim.filterExact($(this).val())
 })
 
 $('#slider').on('change', function(a, b){
