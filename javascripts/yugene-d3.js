@@ -25,15 +25,28 @@ var chart = dc.barChart(".container")
 
 
 data_method(data_path, function(data){
+    // Build a CrossFilter from our data
     var filter = crossfilter(data)
-      , u_val = filter.dimension(function(d){return d.yugene_value})
+
+    // Define out data dimensions
+    var ugene_dim = filter.dimension(function(d){return +d.yugene_value})
+      , data_dim = filter.dimension(function(d){return +d.dataset_id})
+      , author_dim = filter.dimension(function(d){return d.dataset_name.split("_")[0]})
+      , year_dim = filter.dimension(function(d){return +d.dataset_name.split("_")[1]})
+
+    // Define data groups
+    var all = filter.groupAll()
+      , data_by_u_val = ugene_dim.group()
+      , data_by_id = data_dim.group()
+      , data_by_author = author_dim.group()
+      , data_by_year = year_dim.group()
 
     chart.width(1200)
 	 .height(650)
          .x(d3.scale.linear().domain([0, data.length]))
-         .brushOn(false)
-	 .dimension(u_val)
-         .group(u_val.group())
+         //.brushOn(false)
+	 .dimension(ugene_dim)
+         .group(author_dim.group())
 
     chart.render()
 })
