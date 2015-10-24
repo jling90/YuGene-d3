@@ -5,6 +5,7 @@
     <title>YuGene</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.0/dc.css"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.2.3/css/bootstrap-slider.css">
     <link rel="stylesheet" href="css/css.css">
   </head>
 
@@ -25,32 +26,42 @@
           </div>
         </div>
 
+
         <div class="row">
           <div class="form-group">
             <label for="placeholderOne">Placeholder</label>
             <input type="text" class="form-control" id="placeholderOne" placeholder="Example one">
           </div>
-          <div class="form-group">
-            <label for="placeholderTwo">Placeholder</label>
-            <input type="text" class="form-control" id="placeholderOne" placeholder="Example one">
-          </div>
+          <label>Placeholder</label>
+          <select class="form-control">
+            <option>tempOne</option>
+            <option>tempTwo</option>
+            <option>tempThree</option>
+            <option>tempFour</option>
+          </select>
         </div>
 
-        <div class="row" style="pa">
+        <b> 0.0 </b>
+        <input id="ex1" type="text" class="span2" value="" 
+        data-slider-min="0.0" data-slider-max="1.0" data-slider-step="0.01" 
+        data-slider-value="[0.25,0.75]"/>
+        <b> 1.0 </b>
+
+        <div class="row">
           <button type="submit" class="btn btn-default">Submit</button>
         </div>
       </form>
     </div>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.0/dc.js"></script>
-    <script type="text/javascript" src="javascripts/yugene-d3.js"></script>
-  </body>
-
     <div class="container">
     <!-- Here! -->
     </div>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dc/1.7.0/dc.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.2.3/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="javascripts/yugene-d3.js"></script>
   </body>
 </html>
