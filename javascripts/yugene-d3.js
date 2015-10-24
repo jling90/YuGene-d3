@@ -13,16 +13,12 @@ var body = d3.select('body')
                   ext === 'csv' ? d3.csv :
                   null
 
-
 if (!data_method){
     console.log("Unsupported file format! Please use a .tsv or .csv file.")
     return
 }
 
-
 var chart = dc.barChart(".container")
-//var granularity = 
-
 
 data_method(data_path, function(data){
     // Build a CrossFilter from our data
@@ -50,7 +46,44 @@ data_method(data_path, function(data){
 
     chart.render()
 })
-    
+
+// Populate dropdown lists
+var probe_ids = $.map(data_by_id.all(), function(o){ return o.key})
+  , authors = $.map(data_by_author.all(), function(o){ return o.key})
+  , years = $.map(data_by_year.all(), function(o){ return o.key})
+
+// Register listeners for input fields
+$('#drop-probe').on('click', function(){
+    var $el = $(this)
+    if (el.children().length <= 0){
+        $.each(probe_ids, function(){
+            el.append("<li>" + this + "</li>")
+        })
+    }
+})
+
+$('#drop-author').on('click', function(){
+    var $el = $(this)
+    if (el.children().length <= 0){
+        $.each(authors, function(){
+            el.append("<li>" + this + "</li>")
+        })
+    }
+})
+
+$('#drop-years').on('click', function(){
+    var $el = $(this)
+    if (el.children().length <= 0){
+        $.each(years, function(){
+            el.append("<li>" + this + "</li>")
+        })
+    }
+})
+
+$('#slider').on('change', function(a, b){
+    ugene_dim.filter(a, b)
+    dc.redrawAll()
+})
 
 
 })()
