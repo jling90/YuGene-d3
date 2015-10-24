@@ -1,3 +1,17 @@
 .form-control {
     width: 15%;
 }
+
+.container {
+    padding: 1.75em;
+}
+
+.row {
+    padding: 0.2em;
+}
+
+.h3 {
+    padding: 1.75em;
+}
+
+
