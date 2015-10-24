@@ -74,9 +74,9 @@ $('#drop-probe').on('change', function(){
 
 $('#drop-author').on('click', function(){
     var $el = $(this)
-    if (el.children().length <= 0){
+    if ($el.children().length <= 0){
         $.each(authors, function(){
-            el.append("<option>" + this + "</option>")
+            $el.append("<option>" + this + "</option>")
         })
     }
 })
