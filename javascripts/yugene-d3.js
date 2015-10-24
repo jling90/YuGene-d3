@@ -64,7 +64,7 @@ $('#drop-probe').on('click', function(){
     var $el = $(this)
     if (el.children().length <= 0){
         $.each(probe_ids, function(){
-            el.append("<li>" + this + "</li>")
+            el.append("<option>" + this + "</option>")
         })
     }
 })
@@ -73,7 +73,7 @@ $('#drop-author').on('click', function(){
     var $el = $(this)
     if (el.children().length <= 0){
         $.each(authors, function(){
-            el.append("<li>" + this + "</li>")
+            el.append("<option>" + this + "</option>")
         })
     }
 })
@@ -82,7 +82,7 @@ $('#drop-years').on('click', function(){
     var $el = $(this)
     if (el.children().length <= 0){
         $.each(years, function(){
-            el.append("<li>" + this + "</li>")
+            el.append("<option>" + this + "</option>")
         })
     }
 })
