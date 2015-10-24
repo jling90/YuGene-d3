@@ -7,7 +7,7 @@
 (function(){
 
 var body = d3.select('body')
-  , data_path = "yugene_gapdh_mouse.csv"
+  , data_path = "yugene_gapdh_mouse.tsv"
   , ext = data_path.split('.')[data_path.split('.').length - 1]
   , data_method = ext === 'tsv' ? d3.tsv :
                   ext === 'csv' ? d3.csv :
@@ -43,10 +43,10 @@ data_method(data_path, function(data){
 
     chart.width(1200)
 	 .height(650)
-         .x(d3.scale.linear().domain([0, data.length]))
+         .x(d3.scale.linear().domain([0, 1]))
          //.brushOn(false)
-	 .dimension(ugene_dim)
-         .group(author_dim.group())
+	 .dimension(data_dim)
+         .group(data_by_u_val)
 
     chart.render()
 })
