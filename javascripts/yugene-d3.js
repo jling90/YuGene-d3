@@ -23,10 +23,12 @@ body.append('svg')
     .attr('id', 'svg-graph')
 
 
-
-var data = data_method(datapath){
+data_method(data_path, function(data){
+    data.forEach(function(d){
+        console.log(d)
+    })
+})
     
 
-}
 
 })()
