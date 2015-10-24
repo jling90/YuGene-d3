@@ -56,7 +56,8 @@ data_method(data_path, function(data){
          .group(data_by_u_val)
 
     chart.render()
-})
+
+
 
 // Populate dropdown lists
 var probe_ids = $.map(data_by_id.all(), function(o){ return o.key})
@@ -94,6 +95,8 @@ $('#drop-years').on('click', function(){
 $('#slider').on('change', function(a, b){
     ugene_dim.filter(a, b)
     dc.redrawAll()
+})
+
 })
 
 
