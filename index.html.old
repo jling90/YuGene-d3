@@ -15,16 +15,36 @@
     <!-- </div> -->
     <div class="container">
       <form class="form-inline">
-
         <div class="row">
-          <label>Select Gene</label>
-          <select class="form-control" id="drop-author"> </select>
-          <br />
-	  <label>Select Dataset</label>
-	  <select class="form-control" id="drop-dataset"> </select>
+          <div class="form-group">
+            <label for="placeholderOne">Placeholder</label>
+            <input type="text" class="form-control" id="placeholderOne" placeholder="Example one">
+          </div>
+          <div class="form-group">
+            <label for="placeholderTwo">Placeholder</label>
+            <input type="text" class="form-control" id="placeholderOne" placeholder="Example one">
+          </div>
         </div>
 
+        <div class="row">
+          <div class="form-group">
+            <label for="placeholderOne">Filter by Year</label>
+            <input type="text" class="form-control" id="placeholderOne" placeholder="Example one">
+          </div>
+          <label>Filter by Author</label>
+          <select class="form-control" id="drop-author">
+          </select>
+        </div>
 
+        <b> 0.0 </b>
+        <input id="slider" type="text" class="span2" value="" 
+        data-slider-min="0.0" data-slider-max="1.0" data-slider-step="0.01" 
+        data-slider-value="[0.25,0.75]"/>
+        <b> 1.0 </b>
+
+        <div class="row">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
       </form>
     </div>
 
@@ -38,5 +58,7 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.2.3/bootstrap-slider.min.js"></script>
+
+    <script type="text/javascript" src="javascripts/yugene-d3.js"></script>
   </body>
 </html>
